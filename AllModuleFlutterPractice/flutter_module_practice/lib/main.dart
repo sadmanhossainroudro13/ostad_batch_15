@@ -5,6 +5,8 @@ import 'package:flutter_module_practice/module12/Pages/page3.dart';
 import 'package:flutter_module_practice/module12/class2tab.dart';
 import 'package:flutter_module_practice/module12/class3.dart';
 import 'package:flutter_module_practice/module13/class1.dart';
+import 'package:flutter_module_practice/module13/class2.dart';
+import 'package:flutter_module_practice/module13/class3.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,7 +27,7 @@ class MyApp extends StatelessWidget {
       //   '/tabPage': (context) => Module12Class2(),
       //   '/animationPractice': (context) => AnimationPractice(),
       // },
-      home: StatefulPractice(),
+      home: bottomNav(),
     );
   }
 }

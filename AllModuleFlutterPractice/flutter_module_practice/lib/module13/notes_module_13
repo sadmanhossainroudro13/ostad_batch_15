@@ -1,2 +1,15 @@
 Class 1:
 -Stateful Widget
+
+Classs-2:
+-Lifecycle of stateful widget
+-1st call in COnstructor
+-then in create state
+-then init state
+-then in didCHangedDependeicies
+-then inside scaffold
+-then didUpdateWidget
+-deactivate
+-dispose
+
+Class-3:
