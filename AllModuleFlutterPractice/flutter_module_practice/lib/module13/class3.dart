@@ -32,34 +32,45 @@ class _bottomNavState extends State<bottomNav> {
       // body
       body: _pages[_selectedIndex],
 
-      bottomNavigationBar: NavigationBarTheme(
-        data: NavigationBarThemeData(
-          labelTextStyle: MaterialStateProperty.resolveWith((state) {
-            if (state.contains(MaterialState.selected)) {
-              return TextStyle(color: Colors.blue, fontSize: 20);
-            } else {
-              return TextStyle(color: Colors.blue, fontSize: 10);
-            }
-          }),
+      bottomNavigationBar: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [Colors.amber, Colors.blueAccent, Colors.pink],
+          ),
         ),
-        child: NavigationBar(
-          backgroundColor: Colors.grey,
-          indicatorColor: const Color.fromARGB(255, 88, 106, 139),
+        child: NavigationBarTheme(
+          data: NavigationBarThemeData(
+            labelTextStyle: MaterialStateProperty.resolveWith((state) {
+              if (state.contains(MaterialState.selected)) {
+                return TextStyle(color: Colors.white, fontSize: 20);
+              } else {
+                return TextStyle(color: Colors.white, fontSize: 10);
+              }
+            }),
+          ),
 
-          selectedIndex: _selectedIndex,
+          child: NavigationBar(
+            backgroundColor: Colors.transparent,
+            indicatorColor: const Color.fromARGB(255, 88, 106, 139),
 
-          onDestinationSelected: (int index) {
-            setState(() {
-              _selectedIndex = index;
-            });
-          },
+            selectedIndex: _selectedIndex,
 
-          destinations: [
-            NavigationDestination(icon: Icon(Icons.home), label: "Home"),
-            NavigationDestination(icon: Icon(Icons.inbox), label: "Inbox"),
-            NavigationDestination(icon: Icon(Icons.person), label: "Profile"),
-            NavigationDestination(icon: Icon(Icons.settings), label: "Setting"),
-          ],
+            onDestinationSelected: (int index) {
+              setState(() {
+                _selectedIndex = index;
+              });
+            },
+
+            destinations: [
+              NavigationDestination(icon: Icon(Icons.home), label: "Home"),
+              NavigationDestination(icon: Icon(Icons.inbox), label: "Inbox"),
+              NavigationDestination(icon: Icon(Icons.person), label: "Profile"),
+              NavigationDestination(
+                icon: Icon(Icons.settings),
+                label: "Setting",
+              ),
+            ],
+          ),
         ),
       ),
     );

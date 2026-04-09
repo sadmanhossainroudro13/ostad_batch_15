@@ -1,0 +1,56 @@
+import 'package:flutter/material.dart';
+
+class module14Class1 extends StatefulWidget {
+  const module14Class1({super.key});
+
+  @override
+  State<module14Class1> createState() => _module14Class1State();
+}
+
+class _module14Class1State extends State<module14Class1>
+    with SingleTickerProviderStateMixin {
+  late TabController _tabcontroller;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _tabcontroller = TabController(length: 3, vsync: this);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("Custom Tabbar")),
+
+      body: Column(
+        children: [
+          Container(height: 70, color: Colors.blue),
+
+          Container(
+            color: Colors.white,
+            child: TabBar(
+              controller: _tabcontroller,
+              tabs: [
+                Tab(text: 'Home'),
+                Tab(text: 'Profile'),
+                Tab(text: 'Setting'),
+              ],
+            ),
+          ),
+
+          Expanded(
+            child: TabBarView(
+              controller: _tabcontroller,
+              children: [
+                Center(child: Text('Home view')),
+                Center(child: Text('Profile view')),
+                Center(child: Text('Setting view')),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}

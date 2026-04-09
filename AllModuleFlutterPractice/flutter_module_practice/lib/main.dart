@@ -7,6 +7,9 @@ import 'package:flutter_module_practice/module12/class3.dart';
 import 'package:flutter_module_practice/module13/class1.dart';
 import 'package:flutter_module_practice/module13/class2.dart';
 import 'package:flutter_module_practice/module13/class3.dart';
+import 'package:flutter_module_practice/module14/class1.dart';
+import 'package:flutter_module_practice/module14/splashScreen.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -27,7 +30,7 @@ class MyApp extends StatelessWidget {
       //   '/tabPage': (context) => Module12Class2(),
       //   '/animationPractice': (context) => AnimationPractice(),
       // },
-      home: bottomNav(),
+      home: SplashScreen(),
     );
   }
 }
